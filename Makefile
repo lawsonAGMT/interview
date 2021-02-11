@@ -6,8 +6,8 @@ OBJS := $(SOURCES:.cpp=.o)
 
 all: main
 
-main: $(OBJS) $(HEADERS)
+main: $(OBJS) $(HEADERS) $(SOURCES)
 	$(CXX) $(CXXFLAGS) -o main $(OBJS) $(LFLAGS) $(LIBS)
 
-.cpp.o: $(HEADERS)
+.cpp.o: $(HEADERS) $(SOURCES)
 	$(CXX) $(CXXFLAGS) $(INCLUDES) -c $<
